@@ -12,6 +12,6 @@ GAME=$1
 WORKDIR=$(cat $GAMELIST|grep $GAME|cut -d"*" -f2)
 LAUNCH=$(cat $GAMELIST|grep $GAME|cut -d"*" -f3)
 cd $WORKDIR
+xlaunch $LAUNCH
 
-echo $WORKDIR $LAUNCH
 
