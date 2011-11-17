@@ -81,7 +81,7 @@ fi
 
 EXECUTE=$(echo $GAMESTRING|grep $GAME|cut -d"*" -f6)
 if [[ $WORKDIR != "none" ]]; then
-	echo $WORKDIR
+	cd "$WORKDIR"
 fi
 
 if [[ $NEWX == "xinit" && $INNEW == "new" ]]; then
