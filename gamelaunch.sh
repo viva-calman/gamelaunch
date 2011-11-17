@@ -18,8 +18,8 @@
 
 
 
-#GAMELIST='~/.gamelaunch/gamelist'
-GAMELIST='./gamelist'
+GAMELIST='/home/calman/.gamelaunch/gamelist'
+#GAMELIST='./gamelist'
 GAMESCREEN=':1'
 ENVPATH=$(which env)
 WINEPATH=$(which wine)
@@ -87,7 +87,11 @@ fi
 if [[ $NEWX == "xinit" && $INNEW == "new" ]]; then
 	LAUNCH="$NEWX $LAUNCH $EXECUTE -- $GAMESCREEN"
 else
-	LAUNCH="$NEWX $LAUNCH $EXECUTE"
+	if [[ $INNEW == "new" ]]; then
+		LAUNCH="$NEWX $LAUNCH $EXECUTE"
+	else
+		LAUNCH="$LAUNCH $EXECUTE"
+	fi
 fi
 
 if [[ $INNEW == "new" ]]; then
